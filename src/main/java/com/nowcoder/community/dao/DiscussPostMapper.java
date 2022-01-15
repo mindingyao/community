@@ -9,7 +9,7 @@ import java.util.List;
 @Mapper
 public interface DiscussPostMapper {
 
-    List<DiscussPost> selectDiscussPosts(int userId, int offset, int limit);
+    List<DiscussPost> selectDiscussPosts(int userId, int offset, int limit, int orderMode);
 
     //@Param("") 取别名
     //需要在<if>里使用而且只有一个参数必须加@Param
@@ -20,5 +20,11 @@ public interface DiscussPostMapper {
     DiscussPost selectDiscussPostById(int id);
 
     int updateCommentCount(int id, int commentCount);
+
+    int updateType(int id, int type);
+
+    int updateStatus(int id, int status);
+
+    int updateScore(int id, double score);
 
 }
